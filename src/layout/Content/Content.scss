@@ -1,3 +1,21 @@
 .content {
-    border: solid orange 1px;
+    border: solid 1px orange;
+    display: flex;
+
+    &__wrapList {
+        border: solid 1px red;
+    }
+
+    &__listTop {
+        border: solid 1px blue;
+        margin: 10px;
+    }
+    &__listMiddle {
+        border: solid 1px blue;
+        margin: 10px;
+    }
+    &__listBottom {
+        border: solid 1px blue;
+        margin: 10px;
+    }
 }

@@ -12,12 +12,12 @@ class Content extends Component {
           <div className="content__listTop">
             <List />
           </div>
-          <div className="content__listMiddle">
+          {/* <div className="content__listMiddle">
             <List />
           </div>
           <div className="content__listBottom">
             <List />
-          </div>
+          </div> */}
           <div className="content__total">Total amount available for investments:</div>
         </div>
       </div>

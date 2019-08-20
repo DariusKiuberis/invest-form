@@ -1,7 +1,5 @@
 import axios from 'axios'
 
-export const testRedux = () => ({ type: 'TEST' })
-
 export const getLoans = () => {
   return async function(dispatch) {
     const response = await axios.get('./current-loans.json')

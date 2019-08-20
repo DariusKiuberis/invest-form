@@ -7,8 +7,8 @@ class Content extends Component {
     window.Content = this
     return (
       <div className="content">
-        Content
         <div className="content__wrapList">
+          <div className="content__title"> Current Loans </div>
           <div className="content__listTop">
             <List />
           </div>
@@ -18,6 +18,7 @@ class Content extends Component {
           <div className="content__listBottom">
             <List />
           </div>
+          <div className="content__total">Total amount available for investments:</div>
         </div>
       </div>
     )

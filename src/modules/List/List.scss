@@ -1,0 +1,35 @@
+.list {
+    border: solid 1px #cec0c0;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+
+    &__wrapText {
+        // border: solid 1px red;
+    }
+
+    &__title {
+        font-weight: 600;
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    &__details {
+        // font-size: 14px;
+    }
+
+    &__wrapBtn {
+   margin: 0px 0px 0px 100px;
+    }
+
+    &__toast {
+    text-align: end;
+    font-size: 12px;
+    color: green;
+    margin-bottom: 5px;
+    }
+
+    &__btn {
+
+    }
+}

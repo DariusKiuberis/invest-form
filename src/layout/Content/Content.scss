@@ -1,21 +1,33 @@
 .content {
-    border: solid 1px orange;
+    // border: solid 1px orange;
+    min-width: 500px;
     display: flex;
+    justify-content: center;
+
+    &__title {
+        // border: solid 1px blue;
+        font-size: 25px;
+        font-weight: 900;
+        height: 50px;
+    }
 
     &__wrapList {
-        border: solid 1px red;
+        // border: solid 1px red;
+        margin-top: 50px;
     }
 
     &__listTop {
-        border: solid 1px blue;
         margin: 10px;
     }
     &__listMiddle {
-        border: solid 1px blue;
         margin: 10px;
     }
     &__listBottom {
-        border: solid 1px blue;
         margin: 10px;
+    }
+
+    &__total {
+        // border: solid 1px blue;
+        text-align: center;
     }
 }

@@ -1,0 +1,21 @@
+{
+  "arrowParens": "avoid",
+  "bracketSpacing": true,
+  "disableLanguages": [
+    "vue"
+  ],
+  "eslintIntegration": false,
+  "ignorePath": ".prettierignore",
+  "jsxBracketSameLine": false,
+  "parser": "babylon",
+  "printWidth": 120,
+  "proseWrap": "preserve",
+  "requireConfig": false,
+  "semi": false,
+  "singleQuote": true,
+  "stylelintIntegration": false,
+  "tabWidth": 2,
+  "trailingComma": "es5",
+  "tslintIntegration": false,
+  "useTabs": false
+}

@@ -9,16 +9,10 @@ class Content extends Component {
       <div className="content">
         <div className="content__wrapList">
           <div className="content__title"> Current Loans </div>
-          <div className="content__listTop">
+          <div className="content__list">
             <List />
           </div>
-          {/* <div className="content__listMiddle">
-            <List />
-          </div>
-          <div className="content__listBottom">
-            <List />
-          </div> */}
-          <div className="content__total">Total amount available for investments:</div>
+          {/* <div className="content__total">Total amount available for investments:</div> */}
         </div>
       </div>
     )

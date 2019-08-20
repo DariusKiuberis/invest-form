@@ -24,7 +24,10 @@ class List extends Component {
           <div className="list" onDoubleClick={this.start} key={index}>
             <div className="list__wrapText">
               <div className="list__title"> {item.title} </div>
-              <div className="list__details"> Loan details, amounts and value </div>
+              <div className="list__details">
+                {' '}
+                Loan details: <b>{item.tranche}</b>, amounts: <b>{item.amount}</b> and value
+              </div>
             </div>
             <div className="list__wrapBtn">
               {<div className="list__toast"> {true && 'Invested'} </div>}
@@ -34,6 +37,7 @@ class List extends Component {
             </div>
           </div>
         ))}
+        <div className="content__total">Total amount available for investments:</div>
       </React.Fragment>
     )
   }

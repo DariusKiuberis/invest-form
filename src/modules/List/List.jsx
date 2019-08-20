@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { testRedux } from '../../store/actions'
+import { testRedux, getLoans } from '../../store/actions'
 import Button from '../../common/Button/Button'
 import './List.scss'
 
 class List extends Component {
   start = () => {
-    this.props.testRedux()
+    // this.props.testRedux()
+    this.props.getLoans()
   }
 
   render() {
@@ -29,7 +30,6 @@ class List extends Component {
 }
 
 function mapStateToProps(state) {
-  console.log(111, state)
   return {
     testState: state.reduser.number,
   }
@@ -37,6 +37,7 @@ function mapStateToProps(state) {
 
 const mapDispatchToProps = {
   testRedux,
+  getLoans,
 }
 
 export default connect(

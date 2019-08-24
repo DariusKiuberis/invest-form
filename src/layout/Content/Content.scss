@@ -3,6 +3,8 @@
     min-width: 500px;
     display: flex;
     justify-content: center;
+    // background-color: rgba(0, 0, 0, 0.8);
+    // background-color: black;
 
     &__title {
         // border: solid 1px blue;
@@ -17,11 +19,8 @@
     }
 
     &__list {
-        // margin: 10px;
+        border: solid 1px red;
+        position: relative;
     }
 
-    &__total {
-        // border: solid 1px blue;
-        text-align: center;
-    }
 }

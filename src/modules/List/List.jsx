@@ -45,8 +45,10 @@ class List extends Component {
     totalAmount: null,
     id: '',
     showInvestedLabel: false,
-    termRemaining: '',
     listAmount: '',
+    showTitle: '',
+    months: '',
+    days: '',
   }
 
   componentDidMount() {
@@ -66,8 +68,12 @@ class List extends Component {
     // }
   }
 
-  invest = (id, term) => {
-    this.setState({ investForm: true, id: id, termRemaining: term })
+  invest = (id, title, term) => {
+    let minutes = parseInt(term.replace(/,/g, ''))
+    const MINS_PER_MONTH = 24 * 30 * 60
+    const MINS_PER_DAY = 24 * 60
+    let months = Math.floor(minutes / MINS_PER_MONTH)
+    this.setState({ investForm: true, id: id, showTitle: title, months: months })
   }
 
   investAndClose = event => {
@@ -83,7 +89,6 @@ class List extends Component {
     let finalResult = result.toString()
     loansCopy[this.state.id].amount = finalResult
     console.log(111, finalResult, newTotalAmount)
-    // let show = TODO show Invested label for choosen item.(now indicates on all lists)
     this.setState({ investForm: false, loans: loansCopy, totalAmount: newTotalAmount, showInvestedLabel: true })
   }
 
@@ -106,7 +111,7 @@ class List extends Component {
             </div>
             <div className="list__wrapBtn">
               {<div className="list__toast"> {this.state.showInvestedLabel && 'Invested'} </div>}
-              <div className="list__btn" onClick={() => this.invest(item.id, item.term_remaining)}>
+              <div className="list__btn" onClick={() => this.invest(item.id, item.title, item.term_remaining)}>
                 <Button />
               </div>
             </div>
@@ -119,10 +124,12 @@ class List extends Component {
         {this.state.investForm && (
           <div className="investForm" ref={this.el}>
             <div className="investForm__title">
-              <b>Invest in Loan</b>
+              <b>{this.state.showTitle}</b>
             </div>
             <div className="investForm__available">Amount available: {this.state.totalAmount}</div>
-            <div className="investForm__ends">Loan ends in: month days {this.state.termRemaining}</div>
+            <div className="investForm__ends">
+              Loan ends in: {this.state.months} month {this.state.days} days{' '}
+            </div>
             <div className="investForm__amount"> Investment amount ${this.state.value}</div>
 
             <div>

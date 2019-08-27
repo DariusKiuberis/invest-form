@@ -73,16 +73,15 @@ class List extends Component {
     let totalAmount = parseInt(amount.replace(/,/g, ''))
     // const {name, value} = event.target.amount;
     this.setState({ value: totalAmount })
-    console.log(555, amount, event.target)
     let loansCopy = JSON.parse(JSON.stringify(this.state.loans))
-
     let stringToNumber = parseInt(loansCopy[this.state.id].amount.replace(/,/g, ''))
-    console.log(2222, stringToNumber)
+    let newTotalAmount = this.state.totalAmount - totalAmount
     let result = stringToNumber - totalAmount
-    console.log(111, result)
     let finalResult = result.toString()
     loansCopy[this.state.id].amount = finalResult
-    this.setState({ investForm: false, loans: loansCopy })
+    console.log(111, finalResult, newTotalAmount)
+
+    this.setState({ investForm: false, loans: loansCopy, totalAmount: newTotalAmount })
   }
 
   render() {

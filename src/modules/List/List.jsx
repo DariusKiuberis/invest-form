@@ -45,6 +45,8 @@ class List extends Component {
     totalAmount: null,
     id: '',
     showInvestedLabel: false,
+    termRemaining: '',
+    listAmount: '',
   }
 
   componentDidMount() {
@@ -64,8 +66,8 @@ class List extends Component {
     // }
   }
 
-  invest = id => {
-    this.setState({ investForm: true, id: id })
+  invest = (id, term) => {
+    this.setState({ investForm: true, id: id, termRemaining: term })
   }
 
   investAndClose = event => {
@@ -104,7 +106,7 @@ class List extends Component {
             </div>
             <div className="list__wrapBtn">
               {<div className="list__toast"> {this.state.showInvestedLabel && 'Invested'} </div>}
-              <div className="list__btn" onClick={() => this.invest(item.id)}>
+              <div className="list__btn" onClick={() => this.invest(item.id, item.term_remaining)}>
                 <Button />
               </div>
             </div>
@@ -120,7 +122,7 @@ class List extends Component {
               <b>Invest in Loan</b>
             </div>
             <div className="investForm__available">Amount available: {this.state.totalAmount}</div>
-            <div className="investForm__ends">Loan ends in: month days</div>
+            <div className="investForm__ends">Loan ends in: month days {this.state.termRemaining}</div>
             <div className="investForm__amount"> Investment amount ${this.state.value}</div>
 
             <div>

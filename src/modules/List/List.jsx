@@ -88,7 +88,6 @@ class List extends Component {
     let result = stringToNumber - totalAmount
     let finalResult = result.toString()
     loansCopy[this.state.id].amount = finalResult
-    console.log(111, finalResult, newTotalAmount)
     this.setState({ investForm: false, loans: loansCopy, totalAmount: newTotalAmount, showInvestedLabel: true })
   }
 
@@ -110,7 +109,11 @@ class List extends Component {
               </div>
             </div>
             <div className="list__wrapBtn">
-              {<div className="list__toast"> {this.state.showInvestedLabel && 'Invested'} </div>}
+              {
+                <div className="list__toast">
+                  {item.id === this.state.id && this.state.showInvestedLabel && 'Invested'}
+                </div>
+              }
               <div className="list__btn" onClick={() => this.invest(item.id, item.title, item.term_remaining)}>
                 <Button />
               </div>

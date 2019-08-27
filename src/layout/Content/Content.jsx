@@ -12,7 +12,6 @@ class Content extends Component {
           <div className="content__list">
             <List />
           </div>
-          {/* <div className="content__total">Total amount available for investments:</div> */}
         </div>
       </div>
     )

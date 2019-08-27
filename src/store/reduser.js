@@ -1,14 +1,21 @@
-const loans = {
+const initialState = {
   list: [],
 }
 
-export default function reducer(state = loans, action) {
-  //   console.log('reduser: state -->', state, ' action--> ', action)
-
+export default function reducer(state = initialState, action) {
+  // console.log('reduser: state -->', state, ' action--> ', action)
+  // console.log('const initialState : ', initialState)
   switch (action.type) {
     case 'LOANS':
       return {
-        list: state.list.concat(action.payload.loans),
+        ...state,
+
+        list: state.list.concat(action.payload),
+      }
+    case 'ADD':
+      return {
+        ...state,
+        // list: Object.assign({}, action.payload.loans),
       }
     default:
       return state

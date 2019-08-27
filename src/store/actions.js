@@ -7,3 +7,5 @@ export const getLoans = () => {
     dispatch({ type: 'LOANS', payload: response.data })
   }
 }
+
+export const addValue = value => ({ type: 'ADD' })

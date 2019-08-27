@@ -1,3 +1,8 @@
+## Note: had very limited time to make test pixel perfect, sorry about that :) Initialy i was planing to make it properly, redux and etc but realised
+## i don't have enough time for that. Some of workflow/naming i wasn't sure , so left incomplet, if you ask me i can add aditional functionality  ASAP.
+## Thank You !
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

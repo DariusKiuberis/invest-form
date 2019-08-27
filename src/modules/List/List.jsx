@@ -44,6 +44,7 @@ class List extends Component {
     investForm: false,
     totalAmount: null,
     id: '',
+    showInvestedLabel: false,
   }
 
   componentDidMount() {
@@ -70,7 +71,7 @@ class List extends Component {
   investAndClose = event => {
     event.preventDefault()
     const amount = event.target.amount.value
-    let totalAmount = parseInt(amount.replace(/,/g, ''))
+    let totalAmount = parseInt(amount.replace(/,/g, '')) || 0
     // const {name, value} = event.target.amount;
     this.setState({ value: totalAmount })
     let loansCopy = JSON.parse(JSON.stringify(this.state.loans))
@@ -80,8 +81,8 @@ class List extends Component {
     let finalResult = result.toString()
     loansCopy[this.state.id].amount = finalResult
     console.log(111, finalResult, newTotalAmount)
-
-    this.setState({ investForm: false, loans: loansCopy, totalAmount: newTotalAmount })
+    // let show = TODO show Invested label for choosen item.(now indicates on all lists)
+    this.setState({ investForm: false, loans: loansCopy, totalAmount: newTotalAmount, showInvestedLabel: true })
   }
 
   render() {
@@ -102,7 +103,7 @@ class List extends Component {
               </div>
             </div>
             <div className="list__wrapBtn">
-              {<div className="list__toast"> {true && 'Invested'} </div>}
+              {<div className="list__toast"> {this.state.showInvestedLabel && 'Invested'} </div>}
               <div className="list__btn" onClick={() => this.invest(item.id)}>
                 <Button />
               </div>
@@ -115,16 +116,19 @@ class List extends Component {
 
         {this.state.investForm && (
           <div className="investForm" ref={this.el}>
-            <div className="investForm__title">Invest in Loan</div>
-            <div>Amount available: {this.state.totalAmount}</div>
-            <div>Loan ends in: month days</div>
-            Investment amount ${this.state.value}
+            <div className="investForm__title">
+              <b>Invest in Loan</b>
+            </div>
+            <div className="investForm__available">Amount available: {this.state.totalAmount}</div>
+            <div className="investForm__ends">Loan ends in: month days</div>
+            <div className="investForm__amount"> Investment amount ${this.state.value}</div>
+
             <div>
-              <form className="" onSubmit={this.investAndClose}>
-                <div>
+              <form className="investForm__wrapForm" onSubmit={this.investAndClose}>
+                <div className="investForm__inputNumber">
                   <input type="number" name="amount" placeholder="enter amount to invest" />
                 </div>
-                <div>
+                <div className="investForm__submit">
                   <input type="submit" value="INVEST" />
                 </div>
               </form>

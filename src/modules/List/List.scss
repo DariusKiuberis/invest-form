@@ -47,7 +47,7 @@
 }
 
 .investForm {
-    border: solid 1px orange;
+    // border: solid 1px orange;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -59,7 +59,45 @@
     box-shadow: 0px 0px 0px 1000px rgba(0,0,0,0.8);
 
     &__title {
-        border: solid 1px red;
+        margin: 0px 0px 10px 10px;
+    }
+
+    &__available {
+        margin-left: 10px;
+    }
+
+    &__ends {
+        margin: 0px 0px 60px 10px;
+    }
+
+     &__amount {
+        margin: 0px 0px 10px 10px;
+     }
+
+   &__wrapForm {
+    //    border: solid 1px red;
+       display: flex;
+    //    justify-content: space-around;
+
+   }
+
+   &__inputNumber {
+
+    input {
+        border: solid 1px #cec0c0;
+        height: 30px;
+        margin: 0px 40px 0px 10px;
+    }
+ }
+
+    &__submit {
+        input {
+            background-color: yellow;
+            border: solid 1px #f2dc60;
+            padding: 10px 30px 10px 30px;
+            font-weight: 500;
+            border-radius: 2px;
+        }
     }
 
 }

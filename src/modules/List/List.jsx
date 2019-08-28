@@ -94,7 +94,7 @@ class List extends Component {
   render() {
     window.List = this
 
-    const { loans } = this.state || {}
+    const { loans, value, investForm, totalAmount, id, showInvestedLabel, showTitle, months, days } = this.state || {}
     console.log('this.state:', this.state)
 
     return (
@@ -109,11 +109,7 @@ class List extends Component {
               </div>
             </div>
             <div className="list__wrapBtn">
-              {
-                <div className="list__toast">
-                  {item.id === this.state.id && this.state.showInvestedLabel && 'Invested'}
-                </div>
-              }
+              {<div className="list__toast">{item.id === id && showInvestedLabel && 'Invested'}</div>}
               <div className="list__btn" onClick={() => this.invest(item.id, item.title, item.term_remaining)}>
                 <Button />
               </div>
@@ -121,19 +117,19 @@ class List extends Component {
           </div>
         ))}
         <div className="list__total">
-          Total amount available for investments: <b> {this.state.totalAmount}</b>
+          Total amount available for investments: <b> {totalAmount}</b>
         </div>
 
-        {this.state.investForm && (
+        {investForm && (
           <div className="investForm" ref={this.el}>
             <div className="investForm__title">
-              <b>{this.state.showTitle}</b>
+              <b>{showTitle}</b>
             </div>
-            <div className="investForm__available">Amount available: {this.state.totalAmount}</div>
+            <div className="investForm__available">Amount available: {totalAmount}</div>
             <div className="investForm__ends">
-              Loan ends in: {this.state.months} month {this.state.days} days{' '}
+              Loan ends in: {months} month {days} days
             </div>
-            <div className="investForm__amount"> Investment amount ${this.state.value}</div>
+            <div className="investForm__amount"> Investment amount ${value}</div>
 
             <div>
               <form className="investForm__wrapForm" onSubmit={this.investAndClose}>

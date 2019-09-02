@@ -52,7 +52,8 @@ class List extends Component {
   }
 
   componentDidMount() {
-    const availableAmaunt = this.state.loans
+    const { loans } = this.state
+    const availableAmaunt = loans
       .map(item => {
         let items = item.amount
         let totalAmount = parseInt(items.replace(/,/g, ''))
